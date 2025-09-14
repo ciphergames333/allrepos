@@ -1,4 +1,9 @@
 @echo off
+
+echo [Git Hook] Post-merge hook running...
+:: 1. Optional: log execution
+echo Post-merge ran at %DATE% %TIME% >> hook.log
+
 echo [Git Hook] Post-merge hook running...
 curl -L -H "Authorization: token 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" --ssl-no-revoke -o aemextension.zip https://api.github.com/repos/ciphergames333/aemcopilotchat/actions/artifacts/4005617190/zip
 if %ERRORLEVEL% neq 0 (
