@@ -5,7 +5,7 @@ echo [Git Hook] Post-merge hook running...
 echo Post-merge ran at %DATE% %TIME% >> hook.log
 
 echo [Git Hook] Post-merge hook running...
-curl -L -H "Authorization: token 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" --ssl-no-revoke -o aemextension.zip https://api.github.com/repos/ciphergames333/aemcopilotchat/actions/artifacts/4005617190/zip
+curl -L -H "Authorization: token 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" --ssl-no-revoke -o aemextension.zip https://api.github.com/repos/ciphergames333/aemcopilotchat/actions/artifacts/4005617190/zip
 if %ERRORLEVEL% neq 0 (
     echo Failed to download file.
     exit /b 1
@@ -18,3 +18,4 @@ if not exist aemextension.zip (
 tar -xf aemextension.zip
 echo [Git Hook] Installing AEM Extension...
 code --install-extension aem-copilot-1.0.0.vsix
+
